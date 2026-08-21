@@ -69,6 +69,14 @@ h1 {
   transform: rotate(30deg);
 }
 
+.current-time {
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .timer-display {
   display: flex;
   align-items: center;

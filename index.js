@@ -2,6 +2,26 @@ const STORAGE_KEY = "pomodoroMinutes";
 const DEFAULT_MINUTES = 25;
 
 const timeDisplay = document.getElementById("time");
+const currentTimeDisplay = document.getElementById("currentTime");
+
+function updateCurrentTime() {
+  if (!currentTimeDisplay) return;
+  const now = new Date();
+  const formatted = now.toLocaleString("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  });
+  currentTimeDisplay.textContent = formatted;
+}
+
+updateCurrentTime();
+setInterval(updateCurrentTime, 1000);
 
 function getMinutesSetting() {
   const saved = localStorage.getItem(STORAGE_KEY);
